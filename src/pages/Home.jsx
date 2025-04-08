@@ -1,6 +1,8 @@
 import React from "react";
 import { Typewriter } from "react-simple-typewriter";
 import Particles from "../components/background/Particles";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faInstagram, faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
 const Home = () => {
   //   const {text} = useTypewriter({
@@ -59,6 +61,21 @@ const Home = () => {
               <a href="">Contack Me</a>
             </button>
           </div>
+          
+          <div className="flex justify-center space-x-4 mt-8">
+            <h1 className="text-gray-400 text-lg">Follow me here</h1>
+          </div>
+            <div className="flex justify-center py-4 space-x-2">
+              <a href="https://www.instagram.com/andika121204/" target="_blank">
+                <FontAwesomeIcon icon={faInstagram} className="text-white text-2xl" />
+              </a>
+              <a href="https://github.com/andikaPalian" target="_blank">
+                <FontAwesomeIcon icon={faGithub} className="text-white text-2xl" />
+              </a>
+              <a href="https://www.linkedin.com/in/andika-palian-4b96b0309/" target="_blank">
+                <FontAwesomeIcon icon={faLinkedin} className="text-white text-2xl" />
+              </a>
+            </div>
         </div>
       </section>
     </div>

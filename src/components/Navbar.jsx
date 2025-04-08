@@ -8,9 +8,15 @@ const Navbar = () => {
             <div className='flex justify-between items-center h-16'>
                 <a href="" className="text-xl font-bold text-white relative right-[30rem]">{" "}Andika{" "}</a>
                 <div className='hidden md:flex items-center space-x- relative left-[35rem]'>
-                    <CustomButton text={"Home"} />
+                    <a href="#home">
+                      <CustomButton text={"Home"} />
+                      </a>
+                      <a href="#about">
                     <CustomButton text={"About"} />
+                      </a>
+                      <a href="">
                     <CustomButton text={"Contact"} />
+                      </a>
                 </div>
             </div>
         </div>
