@@ -1,36 +1,7 @@
 import React from "react";
-import {
-  JavascriptOriginal,
-  ReactOriginal,
-  NodejsOriginalWordmark,
-  ExpressOriginal,
-  FlaskOriginal,
-  MongodbOriginalWordmark,
-  PostgresqlOriginalWordmark,
-  PrismaOriginalWordmark,
-  PythonOriginal,
-  TailwindcssOriginal,
-  Html5Original,
-  Css3Original,
-  MysqlOriginalWordmark,
-} from "devicons-react";
+import { Skills } from "../data/skillsData";
 
 const About = () => {
-  const Skills = [
-    { icon: <JavascriptOriginal size={"45"} />, name: "JavaScript" },
-    { icon: <ReactOriginal size={"45"} />, name: "React" },
-    { icon: <NodejsOriginalWordmark size={"45"} />, name: "Node.js" },
-    { icon: <ExpressOriginal size={"45"} />, name: "Express" },
-    { icon: <FlaskOriginal size={"45"} />, name: "Flask" },
-    { icon: <MongodbOriginalWordmark size={"45"} />, name: "MongoDB" },
-    { icon: <PostgresqlOriginalWordmark size={"45"} />, name: "PostgreSQL" },
-    { icon: <PrismaOriginalWordmark size={"45"} />, name: "Prisma" },
-    { icon: <PythonOriginal size={"45"} />, name: "Python" },
-    { icon: <TailwindcssOriginal size={"45"} />, name: "Tailwind CSS" },
-    { icon: <Html5Original size={"45"} />, name: "HTML5" },
-    { icon: <Css3Original size={"45"} />, name: "CSS3" },
-    { icon: <MysqlOriginalWordmark size={"45"} />, name: "MySQL" },
-  ];
   return (
     <section
       id="about"
