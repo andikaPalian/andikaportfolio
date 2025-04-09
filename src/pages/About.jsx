@@ -49,7 +49,7 @@ const About = () => {
             building clean APIs, real-time features with Socket.IO, and robust
             authentication systems.
           </p>
-          <p className="text-gray-300 mb-6">
+          <p className="text-gray-300">
             Over the years, I’ve worked on various backend projects ranging from
             e-commerce systems to social media APIs and real-time chat apps. I'm
             passionate about writing maintainable code, designing efficient

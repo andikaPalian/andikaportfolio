@@ -1,5 +1,5 @@
 import React from 'react'
-import CustomButton from './customButton'
+import CustomButton from './CustomButton'
 
 const Navbar = () => {
   return (
@@ -13,6 +13,9 @@ const Navbar = () => {
                       </a>
                       <a href="#about">
                     <CustomButton text={"About"} />
+                      </a>
+                      <a href="#project">
+                    <CustomButton text={"Project"} />
                       </a>
                       <a href="">
                     <CustomButton text={"Contact"} />
