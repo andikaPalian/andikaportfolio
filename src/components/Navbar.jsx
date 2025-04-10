@@ -17,7 +17,7 @@ const Navbar = () => {
                       <a href="#project">
                     <CustomButton text={"Project"} />
                       </a>
-                      <a href="">
+                      <a href="#contact">
                     <CustomButton text={"Contact"} />
                       </a>
                 </div>
