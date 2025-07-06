@@ -21,54 +21,51 @@ const Project = () => {
           slidesToScroll: 1,
         },
       },
+      {
+        breakpoint: 640,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          arrows: false,
+        },
+      },
     ],
   };
+
   return (
-    <section
-      id="project"
-      className="min-h-screen flex items-center justify-center py-20"
-    >
-      <div className="max-w-5xl mx-auto px-4">
-        <h2 className="text-4xl font-bold mb-8 bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent text-center">
+    <section id="project" className="min-h-screen flex items-center justify-center py-20 px-4">
+      <div className="max-w-5xl w-full mx-auto">
+        <h2 className="text-3xl sm:text-4xl font-bold mb-10 bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent text-center">
           Projects
         </h2>
-        {/* <div className="grid grid-cols-1 md:grid-cols-2"> */}
+
         <Slider {...settings}>
           {projectsData.map((data) => (
-            <div className="px-4 py-10">
-              <div
-                key={data.id}
-                className="p-6 rounded-xl border border-white/10 hover:-translate-y-1 hover:border-blue-500/30 hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition"
-              >
-                <h3 className="text-xl font-bold mb-2 text-center pb-2">
-                  {data.title}
-                </h3>
-                <div className="flex justify-center pb-[100px]">
-                  <a href={data.github} target="_blank">
-                    <FontAwesomeIcon
-                      icon={faGithub}
-                      className="text-blue-500 text-2xl"
-                    />
-                  </a>
+            <div key={data.id} className="px-4">
+              <div className="p-6 rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm hover:-translate-y-1 hover:border-blue-500/30 hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition-all h-full flex flex-col justify-between">
+                <div>
+                  <h3 className="text-xl font-bold mb-3 text-center">{data.title}</h3>
+                  <p className="text-gray-400 mb-4 text-center">{data.description}</p>
+                  <div className="flex flex-wrap justify-center gap-2 mb-4">
+                    {data.tech.map((tech, index) => (
+                      <span
+                        key={index}
+                        className="bg-blue-500/10 text-blue-500 py-1 px-3 rounded-full text-sm hover:bg-blue-500/20 hover:shadow-[0_2px_8px_rgba(59,130,246,0.1)] transition-all"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-                <p className="text-gray-400 mb-4 text-center">
-                  {data.description}
-                </p>
-                <div className="flex flex-wrap gap-2 mb-4 justify-center">
-                  {data.tech.map((tech, index) => (
-                    <span
-                      key={index}
-                      className="bg-blue-500/10 text-blue-500 py-1 px-3 rounded-full text-sm hover:bg-blue-500/20 hover:shadow-[0_2px_8px_rgba(59,130,246,0.1)] transition-all"
-                    >
-                      {tech}
-                    </span>
-                  ))}
+                <div className="flex justify-center mt-4">
+                  <a href={data.github} target="_blank" rel="noopener noreferrer">
+                    <FontAwesomeIcon icon={faGithub} className="text-blue-500 text-2xl hover:scale-110 transition-transform" />
+                  </a>
                 </div>
               </div>
             </div>
           ))}
         </Slider>
-        {/* </div> */}
       </div>
     </section>
   );
