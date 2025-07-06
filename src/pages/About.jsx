@@ -14,7 +14,10 @@ const aboutItems = [
 
 const About = () => {
   return (
-    <section id="about" className="py-12 px-4 sm:px-6 md:px-12 lg:px-20">
+    <section
+      id="about"
+      className="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 md:px-12 lg:px-20"
+    >
       <div className="max-w-5xl mx-auto">
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-10 bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent text-center">
           About Me
