@@ -46,7 +46,7 @@ const Home = () => {
 
           {/* Buttons */}
           <div className="flex flex-wrap justify-center gap-4">
-            <a href="">
+            <a href="#project">
               <button className="px-6 py-2 font-medium bg-indigo-500 text-white w-fit transition-all shadow-[3px_3px_0px_white] hover:shadow-none hover:translate-x-[3px] hover:translate-y-[3px] rounded-md">
                 View Projects
               </button>
