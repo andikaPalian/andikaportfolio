@@ -8,7 +8,7 @@ const Home = () => {
   return (
     <div className="w-full min-h-[100dvh] relative">
       {/* Background Particles */}
-      <div className="absolute inset-0 z-0">
+      {/* <div className="absolute inset-0 z-0">
         <Particles
           particleColors={["#ffffff", "#ffffff"]}
           particleCount={400}
@@ -19,7 +19,7 @@ const Home = () => {
           alphaParticles={false}
           disableRotation={false}
         />
-      </div>
+      </div> */}
 
       {/* Main Section */}
       <section id="home" className="min-h-[100dvh] flex items-center justify-center relative">
