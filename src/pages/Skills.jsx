@@ -39,7 +39,7 @@ const Skills = () => {
   return (
     <section
       id="skills"
-      className="min-h-screen py-16 px-4 sm:px-6 md:px-12 lg:px-20"
+      className="min-h-screen py-27 px-4 sm:px-6 md:px-12 lg:px-20"
     >
       <div className="container mx-auto max-w-6xl">
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 text-center">
