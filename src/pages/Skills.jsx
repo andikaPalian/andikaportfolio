@@ -1,24 +1,33 @@
 import React, { useState } from "react";
 import { cn } from "../lib/utils";
+import { FaCode, FaServer, FaTools } from "react-icons/fa";
 
 const skills = [
-  // Frontend
   { name: "HTML/CSS", level: 70, category: "Frontend" },
   { name: "JavaScript", level: 80, category: "Frontend" },
   { name: "React", level: 60, category: "Frontend" },
-
-  // Backend
   { name: "Node.js", level: 70, category: "Backend" },
   { name: "Express", level: 80, category: "Backend" },
   { name: "MongoDB", level: 60, category: "Backend" },
   { name: "PostgreSQL", level: 60, category: "Backend" },
-
-  // Tools
   { name: "Git", level: 80, category: "Tools" },
   { name: "Vs Code", level: 90, category: "Tools" },
 ];
 
 const categories = ["All", "Frontend", "Backend", "Tools"];
+
+const getCategoryIcon = (category) => {
+  switch (category) {
+    case "Frontend":
+      return <FaCode className="text-blue-400 mr-2" />;
+    case "Backend":
+      return <FaServer className="text-green-400 mr-2" />;
+    case "Tools":
+      return <FaTools className="text-yellow-400 mr-2" />;
+    default:
+      return null;
+  }
+};
 
 const Skills = () => {
   const [activeCategory, setActiveCategory] = useState("All");
@@ -26,26 +35,28 @@ const Skills = () => {
   const filteredSkills = skills.filter(
     (skill) => activeCategory === "All" || skill.category === activeCategory
   );
+
   return (
     <section
       id="skills"
-      className="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 md:px-12 lg:px-20"
+      className="min-h-screen py-16 px-4 sm:px-6 md:px-12 lg:px-20"
     >
-      <div className="container mx-auto max-w-5xl">
-        <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
-          My <span className="text-gradient-blue"> Skills</span>
+      <div className="container mx-auto max-w-6xl">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 text-center">
+          My <span className="text-gradient-blue">Skills</span>
         </h2>
 
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
-          {categories.map((category, key) => (
+        {/* Category button scrollable */}
+        <div className="flex gap-3 overflow-x-auto flex-nowrap pb-4 mb-10 justify-start sm:justify-center scrollbar-thin scrollbar-thumb-primary/50">
+          {categories.map((category, index) => (
             <button
-              key={key}
+              key={index}
               onClick={() => setActiveCategory(category)}
               className={cn(
-                "px-5 py-2 rounded-full transition-colors duration-300 capitalize",
+                "flex-shrink-0 min-w-max px-4 py-2 text-sm sm:text-base rounded-full transition-colors duration-300 capitalize",
                 activeCategory === category
-                  ? "bg-secondary text-primary-foreground"
-                  : "bg-zinc-800/50 text-forefround hover:bg-secondary"
+                  ? "bg-gradient-to-r from-blue-500 to-cyan-400 text-white"
+                  : "bg-zinc-800/50 text-foreground hover:bg-secondary"
               )}
             >
               {category}
@@ -53,24 +64,27 @@ const Skills = () => {
           ))}
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredSkills.map((skill, key) => (
+        {/* Grid 2 kolom di mobile */}
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
+          {filteredSkills.map((skill, index) => (
             <div
-              key={key}
-              className="bg-zinc-800/50 p-6 rounded-lg shadow-xs card-hover"
+              key={index}
+              className="bg-zinc-800/50 p-4 sm:p-6 rounded-xl shadow-md transition-transform hover:scale-[1.02]"
             >
-              <div className="text-left mb-4">
-                <h3 className="font-semibold text-lg"> {skill.name}</h3>
+              <div className="flex items-center mb-2">
+                {getCategoryIcon(skill.category)}
+                <h3 className="font-semibold text-sm sm:text-base">
+                  {skill.name}
+                </h3>
               </div>
-              <div className="w-full bg-secondary/50 h-2 rounded-full overflow-hidden">
+              <div className="w-full bg-secondary/50 h-2 rounded-full overflow-hidden mb-2 relative">
                 <div
-                  className="bg-gradient-to-r from-blue-500 to-cyan-400 h-2 rounded-full origin-left animate-[grow_1.5s_ease-out]"
-                  style={{ width: skill.level + "%" }}
+                  className="bg-gradient-to-r from-blue-500 to-cyan-400 h-2 rounded-full transition-all duration-500"
+                  style={{ width: `${skill.level}%` }}
                 />
               </div>
-
-              <div className="text-right mt-1">
-                <span className="text-sm text-muted-foreground">
+              <div className="text-right -mt-1">
+                <span className="text-xs text-muted-foreground">
                   {skill.level}%
                 </span>
               </div>
