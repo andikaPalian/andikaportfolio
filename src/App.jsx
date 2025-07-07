@@ -1,6 +1,7 @@
 import './App.css';
 import Navbar from './components/Navbar';
 import About from './pages/About';
+import Skills from './pages/Skills';
 import Contact from './pages/Contact';
 import Home from './pages/Home';
 import Project from './pages/Project';
@@ -29,6 +30,7 @@ function App() {
       <div className="relative z-10">
         <Home />
         <About />
+        <Skills />
         <Project />
         <Contact />
       </div>
