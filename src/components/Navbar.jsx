@@ -22,7 +22,7 @@ export const Navbar = () => {
           className="bg-white border-2 border-black px-3 py-1 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] cursor-pointer font-black text-xl tracking-tighter uppercase"
         >
           <a href="#home">
-            ANDIKA<span className="text-[#3b82f6]">PALIAN</span>
+            ANDIKA<span className="text-[#3b82f6]"> PALIAN</span>
           </a>
         </motion.div>
 
